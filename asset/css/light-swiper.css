@@ -1,0 +1,142 @@
+/**
+ * Created by PhpStorm.
+ * User: Devmc
+ * Date: 2021/8/25
+ * Time: 2:38
+ */
+
+.light-swiper {
+    position: relative;
+    overflow: hidden;
+    width: 960px;
+    height: 540px;
+    background-color: #eee;
+}
+
+
+/*初始化之前设置的图片，不显示*/
+.light-swiper > img {
+    display: none;
+}
+
+/*左右箭头*/
+.light-swiper .arrow-button {
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    height: 2.2rem;
+    width: 2.2rem;
+    cursor: pointer;
+    transition: .3s;
+    border-radius: 50%;
+    background-color: rgba(31, 45, 61, 0.11);
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.light-swiper .arrow-button:hover {
+    background-color: rgba(31, 45, 61, 0.33);
+}
+
+/*img svg*/
+.light-swiper .arrow-button > * {
+    max-width: 2rem;
+    max-height: 2rem;
+}
+
+.light-swiper .arrow-button.arrow-left {
+    left: 1rem;
+}
+
+.light-swiper .arrow-button.arrow-right {
+    right: 1rem;
+}
+
+/*hover*/
+.light-swiper.hover-buttons .arrow-left {
+    transition: left 0.3s;
+    left: -2.2rem;
+}
+
+.light-swiper.hover-buttons .arrow-right {
+    transition: right 0.3s;
+    right: -2.2rem;
+}
+
+.light-swiper.hover-buttons:hover .arrow-left {
+    left: 1rem;
+}
+
+.light-swiper.hover-buttons:hover .arrow-right {
+    right: 1rem;
+}
+
+/*图片列表*/
+.light-swiper ul {
+    height: inherit;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    transition: left 500ms ease-in-out;
+}
+
+.light-swiper ul li {
+    height: inherit;
+    position: absolute;
+    left: 0;
+    display: inline;
+}
+
+.light-swiper ul li a {
+    display: block;
+    height: inherit;
+    text-decoration: none;
+}
+
+.light-swiper ul li img {
+    object-fit: cover;
+    height: 100%;
+	width:100%;
+}
+
+/*小圆点*/
+.light-swiper .dots {
+    position: absolute;
+    bottom: 1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    user-select: none;
+}
+
+.light-swiper .dots span {
+    display: inline-block;
+    width: .9rem;
+    height: .9rem;
+    cursor: pointer;
+    border-radius: 100%;
+    background-color: white;
+    margin: 0 .4rem;
+    opacity: .5;
+}
+
+.light-swiper .dots span.active {
+    opacity: 1;
+}
+
+/*hover*/
+.light-swiper.hover-dots .dots {
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.light-swiper.hover-dots:hover .dots {
+    opacity: 1;
+
+}
